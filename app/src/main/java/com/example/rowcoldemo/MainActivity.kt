@@ -40,7 +40,7 @@ fun RowColDemoTheme(content: @Composable () -> Unit) {
 
 @Composable
 fun MainScreen(modifier: Modifier = Modifier) {
-    Column(horizontalAlignment = Alignment.Start,
+    Column(horizontalAlignment = Alignment.CenterHorizontally,
         modifier = modifier.width(250.dp)) {
         TextCell("1")
         TextCell("2")
