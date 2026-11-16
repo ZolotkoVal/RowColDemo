@@ -26,6 +26,16 @@ class BaselineDesignTest {
     private fun top(text: String) =
         compose.onNodeWithText(text).fetchSemanticsNode().boundsInRoot.top
 
+    @Test fun firstBaselineUses32SpAndAlignsToFirstLine() {
+        compose.setContent { RowColDemoTheme { FirstBaselineScreen() } }
+        val large = layout("Large Text\n\nMore Text")
+        val small = layout("Small Text")
+        assertEquals("Actual rendered Small Text size", 32.sp, small.layoutInput.style.fontSize)
+        assertEquals("Small first baseline must equal large FIRST baseline",
+            top("Large Text\n\nMore Text") + large.firstBaseline,
+            top("Small Text") + small.firstBaseline, 1f)
+    }
+
     @Test fun lastBaselineUses32SpAndAlignsToLastLine() {
         compose.setContent { RowColDemoTheme { LastBaselineScreen() } }
         val large = layout("Large Text\n\nMore Text")

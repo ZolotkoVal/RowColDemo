@@ -40,7 +40,7 @@ fun RowColDemoTheme(content: @Composable () -> Unit) {
 
 @Composable
 fun MainScreen(modifier: Modifier = Modifier) {
-    LastBaselineScreen(modifier)
+    FirstBaselineScreen(modifier)
 }
 
 @Composable
