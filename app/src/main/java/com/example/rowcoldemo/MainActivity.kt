@@ -40,10 +40,11 @@ fun RowColDemoTheme(content: @Composable () -> Unit) {
 
 @Composable
 fun MainScreen(modifier: Modifier = Modifier) {
-    Column(modifier = modifier.width(300.dp)) {
-        TextCell("1", Modifier.align(Alignment.Start))
-        TextCell("2", Modifier.align(Alignment.CenterHorizontally))
-        TextCell("3", Modifier.align(Alignment.End))
+    Row(modifier) {
+        Text(text = "Large Text", fontSize = 40.sp,
+            fontWeight = FontWeight.Bold)
+        Text(text = "Small Text", fontSize = 32.sp,
+            fontWeight = FontWeight.Bold)
     }
 }
 
