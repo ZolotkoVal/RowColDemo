@@ -43,7 +43,7 @@ fun MainScreen(modifier: Modifier = Modifier) {
     Row(modifier) {
         Text(text = "Large Text\n\nMore Text", modifier = Modifier.alignBy(FirstBaseline), fontSize = 40.sp,
             fontWeight = FontWeight.Bold)
-        Text(text = "Small Text", modifier = Modifier.alignByBaseline(),
+        Text(text = "Small Text", modifier = Modifier.paddingFrom(alignmentLine = FirstBaseline, before = 80.dp, after = 0.dp),
             fontWeight = FontWeight.Bold)
     }
 }

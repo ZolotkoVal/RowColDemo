@@ -82,3 +82,6 @@ alignBy(FirstBaseline) явно выбирает ту же первую базо
 
 ## 27 — Align multiline text by FirstBaseline
 Выбор FirstBaseline переносит Small Text к первой строке большого текста (рис. 19). Проверка: More Text остаётся ниже; выравнивание использует базовую линию, а не нижнюю границу блока.
+
+## 28 — Offset text using paddingFrom FirstBaseline
+paddingFrom задаёт расстояние от верхнего края до первой базовой линии Small Text не менее 80 dp (рис. 20). Проверка: малый текст смещён вниз, но не обязан совпасть с LastBaseline; после линии дополнительный отступ 0 dp.
