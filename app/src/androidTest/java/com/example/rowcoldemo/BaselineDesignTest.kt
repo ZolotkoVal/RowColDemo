@@ -8,6 +8,7 @@ import androidx.compose.ui.test.onNodeWithText
 import androidx.compose.ui.test.performSemanticsAction
 import androidx.compose.ui.text.TextLayoutResult
 import androidx.compose.ui.unit.sp
+import androidx.compose.ui.unit.dp
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertTrue
 import org.junit.Rule
@@ -25,6 +26,15 @@ class BaselineDesignTest {
 
     private fun top(text: String) =
         compose.onNodeWithText(text).fetchSemanticsNode().boundsInRoot.top
+
+    @Test fun paddingFromUses32SpAndPlacesBaselineAt80Dp() {
+        compose.setContent { RowColDemoTheme { PaddingFromScreen() } }
+        val small = layout("Small Text")
+        assertEquals("Actual rendered Small Text size", 32.sp, small.layoutInput.style.fontSize)
+        assertEquals("First baseline must be 80dp from row top",
+            with(compose.density) { 80.dp.toPx() },
+            top("Small Text") + small.firstBaseline, 1f)
+    }
 
     @Test fun firstBaselineUses32SpAndAlignsToFirstLine() {
         compose.setContent { RowColDemoTheme { FirstBaselineScreen() } }
