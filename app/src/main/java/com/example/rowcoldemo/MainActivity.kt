@@ -41,9 +41,9 @@ fun RowColDemoTheme(content: @Composable () -> Unit) {
 @Composable
 fun MainScreen(modifier: Modifier = Modifier) {
     Row(modifier) {
-        Text(text = "Large Text", modifier = Modifier.alignBy(FirstBaseline), fontSize = 40.sp,
+        Text(text = "Large Text\n\nMore Text", modifier = Modifier.alignBy(LastBaseline), fontSize = 40.sp,
             fontWeight = FontWeight.Bold)
-        Text(text = "Small Text", modifier = Modifier.alignBy(FirstBaseline), fontSize = 32.sp,
+        Text(text = "Small Text", modifier = Modifier.alignByBaseline(),
             fontWeight = FontWeight.Bold)
     }
 }
