@@ -40,8 +40,8 @@ fun RowColDemoTheme(content: @Composable () -> Unit) {
 
 @Composable
 fun MainScreen(modifier: Modifier = Modifier) {
-    Row(verticalAlignment = Alignment.Bottom,
-        modifier = modifier.size(width = 400.dp, height = 200.dp)) {
+    Column(horizontalAlignment = Alignment.Start,
+        modifier = modifier.width(250.dp)) {
         TextCell("1")
         TextCell("2")
         TextCell("3")
