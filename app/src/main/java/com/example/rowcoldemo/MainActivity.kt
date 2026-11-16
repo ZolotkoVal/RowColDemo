@@ -40,7 +40,7 @@ fun RowColDemoTheme(content: @Composable () -> Unit) {
 
 @Composable
 fun MainScreen(modifier: Modifier = Modifier) {
-    Column(verticalArrangement = Arrangement.Top,
+    Column(verticalArrangement = Arrangement.Center,
         modifier = modifier.height(400.dp)) {
         TextCell("1")
         TextCell("2")
